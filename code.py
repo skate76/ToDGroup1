@@ -17,5 +17,6 @@ button = tk.Button(
     bg ="blue",
     fg ="yellow",
     )
+button.pack()
 
 window.mainloop()
