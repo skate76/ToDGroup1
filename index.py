@@ -1,4 +1,5 @@
 import getpass
+import os
 
 Cusernames = ["customer123"]
 Cpasswords = ["customer123"]
@@ -8,6 +9,8 @@ Epasswords = ["employee123"]
 
 Ousernames = ["KTAIT123"]
 Opasswords = ["KTAIT123"]
+
+inventory = [["cakes", 10],["cookies",10]]
 
 def login():
     while True:
@@ -22,7 +25,12 @@ def login():
             admin_menu()
         else:
             print("INVALID PASSWORD")
-            break
+            print('')
+            print("please try again")
+            os.system('cls')
+            login()
+
+            
         
 
 
@@ -37,15 +45,24 @@ def admin_menu():
     
         if choice == 1:
             print ("Add/Update Inventory")
+            os.system('cls')
+            inventory_mgmt()
         elif choice == 2:
             print("Manage Staff")
+            os.system('cls')
+            staff_mgmt()
         elif choice == 3:
             print("Generate Reports")
+            os.system('cls')
+            generate_reports()
         elif choice == 4:
-            print("Exit")
+            print("Exiting......")
+            os.system('cls')
             break 
         else:
-            print("Invalid Choice. Please enter a number from 1 - 3")
+            print("Invalid Choice. Please enter a number from 1 - 4")
+            os.system('cls')
+            admin_menu()
         
         
 def cus_menu():
@@ -58,13 +75,21 @@ def cus_menu():
         choice = int(input("Please Select A Function:"))
         if choice == 1:
             print ("Make an Order")
+            os.system('cls')
+            make_order()
         elif choice == 2:
             print("Display Inventory")
+            os.system('cls')
+            display()
+            
         elif choice == 3:
-            print("Exit")
+            print("Exiting....")
+            os.system('cls')
             break
         else:
-            print("Invalid Choice. Please enter a number from 1 - 2")
+            print("Invalid Choice. Please enter a number from 1 - 3")
+            os.system('cls')
+            cus_menu()
         
 
 
@@ -77,18 +102,67 @@ def emp_menu():
         choice = int(input("Please Select A Function:"))
         if choice == 1:
             print ("Add/Update Inventory")
+            os.system('cls')
+            inventory_mgmt()
+        
         elif choice == 2:
             print("Check in/Check out")
+            os.system('cls')
+            chekin_menu()
+            os.system('cls')
         elif choice == 3:
-            print("Exit")
+            print("Exiting....")
+            os.system('cls')
             break
         else:
-            print("Invalid Choice. Please enter a number from 1 - 5")
+            print("Invalid Choice. Please enter a number from 1 - 3")
+            os.system('cls')
+            emp_menu()
+
 
 
 
 def inventory_mgmt():
-    print("Welcome to the Inventory Manager")
+    while True:
+        print("Welcome to the Inventory Manager")
+        print('')
+        print("1. Display inventory")
+        print("2. Add New inventory")
+        print("3. Update inventory")
+        print("4. Remove inventory")
+        print("5. Go Back")
+
+
+        choice = int(input("Please Select A Function:"))
+        if choice == 1:
+            print ("Display")
+            os.system('cls')
+            display()
+            break
+        elif choice == 2:
+            print("Add Inventory")
+            os.system('cls')
+            add_inventory()
+        elif choice == 3:
+            print("Update Inventory")
+            os.system('cls')
+            update_inventory()
+        elif choice == 4:
+            print("Remove Inventory")
+            os.system('cls')
+            remove_inventory()
+        elif choice == 5:
+            print("Exiting....")
+            os.system('cls')
+            break
+        else:
+            print("Invalid Choice. Please enter a number from 1 - 5")
+            os.system('cls')
+            inventory_mgmt()
+        
+
+        
+    
 
 def add_inventory():
     print("Welcome to the Inventory Manager")
@@ -100,7 +174,37 @@ def remove_inventory():
     print("Welcome to the Inventory Manager")
 
 def display():
-    print("Welcome to the Inventory Manager")
+    print("")
+    for i in inventory:
+        print (i)
+        print('')
+
+
+def chekin_menu():
+    while True:
+        print("1. Checkin")
+        print("2. Checkout")
+        print("3. Exit")
+     
+
+        choice = int(input("Please Select A Function:"))
+        if choice == 1:
+            print ("Check in")
+            os.system('cls')
+            checkin()
+        elif choice == 2:
+            print("Checkout")
+            os.system('cls')
+            checkout()
+            
+        elif choice == 3:
+            print("Exiting....")
+            os.system('cls')
+            break
+        else:
+            print("Invalid Choice. Please enter a number from 1 - 3")
+            os.system('cls')
+            chekin_menu()
 
 def checkin():
     print("Welcome to the Inventory Manager")
@@ -112,7 +216,33 @@ def checkout():
 
 
 def staff_mgmt():
-    print("Welcome to the Staff Manager")
+    while True:
+        print("Welcome to the Staff Manager")
+        print('')
+        print("1. Add Staff")
+        print("2. Update Staff")
+        print("3. Remove Staff")
+        print("4. Go Back")
+
+
+        choice = int(input("Please Select A Function:"))
+        if choice == 1:
+            os.system('cls')
+            add_staff()
+        elif choice == 2:
+            os.system('cls')
+            update_staff()
+        elif choice == 3:
+            os.system('cls')
+            remove_staff()
+        elif choice == 4:
+            print("Exiting....")
+            os.system('cls')
+            break
+        else:
+            print("Invalid Choice. Please enter a number from 1 - 5")
+            os.system('cls')
+            inventory_mgmt()
 
 def add_staff():
     print("Welcome to the Inventory Manager")
@@ -122,6 +252,8 @@ def remove_staff():
 
 def update_staff():
     print("Welcome to the Inventory Manager")
+
+
 
 def generate_reports():
     print("Welcome to the Inventory Manager")
