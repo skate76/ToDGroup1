@@ -1,5 +1,6 @@
 import getpass
 import os
+from employee import Employee, initialize_employees  # Import employee class and initialization
 
 Cusernames = ["customer123"]
 Cpasswords = ["customer123"]
