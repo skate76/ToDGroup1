@@ -40,3 +40,12 @@ class Employee:
                 return emp
         return None
 
+# Initialization of employees (you could also move this to a separate function)
+def initialize_employees():
+    emp1 = Employee(1, "Justin Moo", "Manager", "emp1", "pass1")
+    emp2 = Employee(2, "Katelyn Tait", "Cashier", "emp2", "pass2")
+    emp3 = Employee(3, "Nasya Burrell", "Cashier", "emp3", "pass3")
+    emp4 = Employee(4, "Tishawn Whyte", "Cashier", "emp4", "pass4")
+    emp5 = Employee(5, "Johanthon Bennet", "Cashier", "emp5", "pass5")
+    emp6 = Employee(6, "Dominic Adams", "Cashier", "emp6", "pass6")
+    # More employees can be added here as needed
