@@ -5,12 +5,12 @@ class Employee:
   @classmethod
   def employee_initialization():
     # Add your ID number, position and password if you want 
-    Employee(1, "Justin Moo", "Manager", "employee1", "password1")
-    Employee(2, "Katelyn Tait", "Cashier", "employee2", "password2")
-    Employee(3, "Nasya Burrell", "Cashier", "employee3", "password3")
-    Employee(4, "Tishawn Whyte", "Cashier", "employee4", "password4")
-    Employee(5, "Johnathon Bennet", "Cashier", "employee5", "password5")
-    Employee(6, "Dominic Adams", "Cashier", "employee6", "password6")
+    Employee(1, "Justin Moo", "Manager", "employee1", "password1", 20.00)
+    Employee(2, "Katelyn Tait", "Cashier", "employee2", "password2", 20.00)
+    Employee(3, "Nasya Burrell", "Cashier", "employee3", "password3", 20.00)
+    Employee(4, "Tishawn Whyte", "Cashier", "employee4", "password4", 20.00)
+    Employee(5, "Johnathon Bennet", "Cashier", "employee5", "password5", 20.00)
+    Employee(6, "Dominic Adams", "Cashier", "employee6", "password6", 20.00)
 
   
    #Functions for checking in and out employees 
@@ -100,6 +100,7 @@ class Employee:
     self.phonenumber = phone_number
     self.email = email
     self.attendance_r = []
+    self.payrate = employee_payrate 
     
     Employee.employee_list.append(self)
 
